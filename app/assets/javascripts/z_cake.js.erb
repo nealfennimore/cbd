@@ -78,7 +78,7 @@ var Cake = {
   },
 
   renderCandleFlame: function(flame_holder_index){
-      var flame_svg = "assets/cake-candle.svg"
+      var flame_svg = "<%= asset_path('cake-candle.svg') %>"
       var s = Snap("#flame-" + flame_holder_index);
       Snap.load(flame_svg, function(data){
         s.append( data );
@@ -95,7 +95,7 @@ var Cake = {
       candle_holder.appendChild(flame_holder);
 
       var s = Snap("#candle-" + i);
-      var candle_svg = "assets/candle-" + Cake.candles[i].candle_img + ".svg";
+      var candle_svg = "/assets/candle-" + Cake.candles[i].candle_img + ".svg";
     
       Snap.load(candle_svg, function(data){
         s.append( data );
