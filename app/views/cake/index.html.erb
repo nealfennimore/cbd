@@ -1,0 +1,74 @@
+<div class="cake-holder">
+    <div class="row">
+        <div class="columns small-centered small-9">
+            <div class="candle-holder-1"><div class="candle-holder"></div></div>
+            <div class="candle-holder-2"><div class="candle-holder"></div></div>
+            <div class="candle-holder-3"><div class="candle-holder"></div></div>
+            <div class="candle-holder-4"><div class="candle-holder"></div></div>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="700" height="600"  xml:space="preserve" id="cake">
+                <defs>
+                    <pattern id="creambottom-cakeBottom" x="0" y="-124" width="400" height="400" patternUnits="userSpaceOnUse" viewBox="0 0 400 400">
+                        <image xlink:href="<%= asset_url('cream-bottom.png')%>" x="0" y="0" width="400" height="400" />
+                    </pattern>
+                    <filter id="shadow2-inner" filterUnits="userSpaceOnUse">
+                        <feGaussianBlur in="SourceAlpha" stdDeviation="4.5" result="blur"/>
+                        <feOffset dx="-8.1" dy="-17.1"/>
+                        <feComposite in2="SourceAlpha" operator="arithmetic" k2="-1.15" k3="1.15" result="shadowDiff"/>
+                        <feFlood flood-color="rgb(244, 230, 255)" flood-opacity="1"/>
+                        <feComposite in2="shadowDiff" operator="in"/>
+                        <feComposite in2="SourceGraphic" operator="over"/>
+                    </filter>
+                    <pattern id="creambottom-cakeTop" x="0" y="-100" width="400" height="400" patternUnits="userSpaceOnUse" viewBox="0 0 400 400">
+                        <image xlink:href="<%= asset_url('cream-bottom.png')%>" x="0" y="0" width="400" height="400" />
+                    </pattern>
+                    <linearGradient id="gradient3-cakeBottom3" x1="665.5" y1="370.5" x2="31.5" y2="370.5" gradientUnits="userSpaceOnUse" >
+                        <stop offset="0" stop-color="rgb(255, 255, 255)" stop-opacity="1" />
+                        <stop offset="0.23" stop-color="rgb(218, 188, 241)" stop-opacity="0.83" />
+                        <stop offset="0.41" stop-color="rgb(181, 121, 227)" stop-opacity="0.66" />
+                        <stop offset="0.66" stop-color="rgb(218, 188, 241)" stop-opacity="0.83" />
+                        <stop offset="0.88" stop-color="rgb(255, 255, 255)" stop-opacity="1" />
+                    </linearGradient>
+                    <pattern id="creamtop-cakeTop2" x="33" y="437" width="400" height="400" patternUnits="userSpaceOnUse" viewBox="0 0 400 400">
+                        <image xlink:href="<%= asset_url('cream-top.png')%>" x="0" y="0" width="400" height="400" />
+                    </pattern>
+                    <filter id="shadow-inner" filterUnits="userSpaceOnUse">
+                        <feGaussianBlur in="SourceAlpha" stdDeviation="7.5" result="blur"/>
+                        <feOffset dx="0.1" dy="-0.1"/>
+                        <feComposite in2="SourceAlpha" operator="arithmetic" k2="-1.15" k3="1.15" result="shadowDiff"/>
+                        <feFlood flood-color="rgb(244, 230, 255)" flood-opacity="1"/>
+                        <feComposite in2="shadowDiff" operator="in"/>
+                        <feComposite in2="SourceGraphic" operator="over"/>
+                    </filter>
+                    <filter id="shadow3-outer" filterUnits="userSpaceOnUse">
+                        <feGaussianBlur stdDeviation="0.5" />
+                        <feOffset dx="1.1" dy="1.1" result="blur" />
+                        <feFlood flood-color="rgb(124, 0, 119)" flood-opacity="1" />
+                        <feComposite in2="blur" operator="in" result="colorShadow" />
+                        <feComposite in="SourceGraphic" in2="colorShadow" operator="over" />
+                    </filter>
+                </defs>
+                <g id="cakeWireframe">
+                    <path id="cakeBottom" stroke="none" fill="url(#creambottom-cakeBottom)" filter="url(#shadow2-inner)" d="M 665.5,368.33 C 672.59,419.79 641.97,472.65 573.65,512.01 449.86,583.33 249.14,583.33 125.35,512.01 57.03,472.65 26.41,419.79 33.5,368.33 L 33.5,181.5 666,181 665.5,368.33 Z M 665.5,368.33" />
+                    <ellipse id="cakeTop" stroke="none" fill="url(#creambottom-cakeTop)" cx="349.5" cy="192.5" rx="317" ry="156" />
+                </g>
+                <g id="cakeGradient" opacity="0.4">
+                    <path id="cakeBottom3" stroke="none" fill="url(#gradient3-cakeBottom3)" d="M 664.5,365.33 C 671.59,416.79 640.97,469.65 572.65,509.01 448.86,580.33 248.14,580.33 124.35,509.01 56.03,469.65 25.41,416.79 32.5,365.33 L 32.5,178.5 664.5,178.5 664.5,365.33 Z M 664.5,365.33" />
+                </g>
+                <g id="cakeWireframe2">
+                    <ellipse id="cakeTop2" stroke="none" fill="url(#creamtop-cakeTop2)" filter="url(#shadow-inner)" cx="349.5" cy="192.5" rx="317" ry="156" />
+                </g>
+                <g id="group">
+                    <rect id="text" stroke="none" fill="none" x="32" y="36" width="631" height="313" />
+                    <text fill="rgb(226, 0, 151)" filter="url(#shadow3-outer)" font-family="PermanentMarker, 'Permanent Marker', sans-serif" font-size="50.5" x="161.06" y="118">
+                        <tspan x="161.06" y="174">Happy Birthday!</tspan>
+                    </text>
+                    <rect id="text2" stroke="none" fill="none" x="32" y="82" width="631" height="313" />
+                    <text fill="rgb(245, 148, 241)" filter="url(#shadow3-outer)" font-family="PermanentMarker, 'Permanent Marker', sans-serif" font-size="56" x="224.18" y="177">
+                        <tspan x="224.18" y="239">Christine</tspan>
+                    </text>
+                </g>
+            </svg>
+
+        </div>
+    </div>
+</div>

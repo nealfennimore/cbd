@@ -1,0 +1,84 @@
+// Place all the styles related to the Cake controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+background: rgb(137,137,137);
+background: -moz-radial-gradient(center, ellipse cover,  rgba(137,137,137,1) 0%, rgba(0,0,0,1) 100%);
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(137,137,137,1)), color-stop(100%,rgba(0,0,0,1)));
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(137,137,137,1) 0%,rgba(0,0,0,1) 100%);
+background: -o-radial-gradient(center, ellipse cover,  rgba(137,137,137,1) 0%,rgba(0,0,0,1) 100%);
+background: -ms-radial-gradient(center, ellipse cover,  rgba(137,137,137,1) 0%,rgba(0,0,0,1) 100%);
+background: radial-gradient(ellipse at center,  rgba(137,137,137,1) 0%,rgba(0,0,0,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#898989', endColorstr='#000000',GradientType=1 );
+}
+
+.cake-holder {
+  position: relative;
+  top: 100px;
+  background: image-url('table2.jpg') repeat-x bottom !important;
+  background-size: cover;
+  width: 100%;
+  position: relative;
+}
+
+.candle-holder {
+  position: relative;
+}
+
+.candle-holder div {
+  position: absolute;
+  width: 23px;
+  height: 142px;
+}
+
+.candle-holder-1, .candle-holder-2, .candle-holder-3, .candle-holder-4, .candle-holder-5 {
+  position: absolute;
+}
+
+.candle-holder-1, .candle-holder-2 {
+  width: 100px;
+  height: 100px;
+  top: 140px;
+}
+
+.candle-holder-1 {
+  left: 72px;
+  z-index: 5;
+}
+
+.candle-holder-2 {
+  right: 88px;
+  z-index: 4;
+}
+
+.candle-holder-3 {
+  height: 41px;
+  width: 500px;
+  top: 95px;
+  left: 115px;
+  z-index: 3;
+}
+
+.candle-holder-4 {
+  width: 371px;
+  height: 30px;
+  top: 65px;
+  left: 178px;
+  z-index: 2;
+}
+
+.candle-holder-5 {
+  width: 208px;
+  height: 22px;
+  top: 43px;
+  left: 260px;
+  z-index: 1;
+}
+
+.candle-holder div.flame {
+  width: 23px;
+  height: 35px;
+  display: block;
+  top: -24px;
+}
