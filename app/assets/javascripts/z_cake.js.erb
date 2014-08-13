@@ -95,7 +95,7 @@ var Cake = {
       candle_holder.appendChild(flame_holder);
 
       var s = Snap("#candle-" + i);
-      var candle_svg = "/assets/candle-" + Cake.candles[i].candle_img + ".svg";
+      var candle_svg = Cake.grabCandleSVGImg[Cake.candles[i].candle_img];
     
       Snap.load(candle_svg, function(data){
         s.append( data );
@@ -105,7 +105,15 @@ var Cake = {
 
       })(i);
     }
-  }
+  },
+
+  grabCandleSVGImg: [
+  "<%= asset_path('candle-0.svg') %>",
+  "<%= asset_path('candle-1.svg') %>",
+  "<%= asset_path('candle-2.svg') %>",
+  "<%= asset_path('candle-3.svg') %>",
+  "<%= asset_path('candle-4.svg') %>"
+  ],
 
 };
 
