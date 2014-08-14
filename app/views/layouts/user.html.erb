@@ -22,10 +22,13 @@
       <section class="top-bar-section">
         <ul class="right">
           <li class="has-dropdown">
-            <a href="#">User</a>
-            <ul class="dropdown">
-              <li><%= link_to "New User", new_user_path %></li>
-            </ul>
+              <div><% if current_user %>
+                Welcome <strong><%= current_user.name %></strong>!
+                <%= link_to "Sign out", signout_path, id: "sign_out" %>
+              <% else %>
+                <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+              <% end %>
+            </div>
           </li>
         </ul>
       </section>
