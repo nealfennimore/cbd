@@ -129,18 +129,34 @@ Cake.renderCandles();
 
 $(document).ready(function(){
   $('div.flame').on('mouseenter', function(){
-    $(this).fadeOut(150);
-    age--;
     $(this).unbind('mouseenter');
+    if(age === 1){
+      $(this).remove();
 
-    setTimeout(function(){
-      if(age === 0){
-        alert("Happy Birthday!");
-      }
-    }, 160);
+      $('#myModal').foundation('reveal', 'open', {
+        url: '/users',
+        success: function(data) {
+            
+        },
+        error: function() {
+            alert('failed loading modal');
+        }
+      });
 
+    } else {
+      $(this).fadeOut(150);
+    }
+    age--;
   })
+  $('.reveal-modal').css('max-height', $('html').height() - 110 + 'px'); // 100 +10px to keep modal effect visible
 })
+
+
+// Reset max-height after window resize
+$(window).resize(function() {
+    $('.reveal-modal').css('max-height', $('html').height() - 110 + 'px');
+})
+
 
 
 

@@ -12,7 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
+//= require foundation/foundation
+//= require foundation/foundation.abide
+//= require foundation/foundation.alert
+//= require foundation/foundation.dropdown
+//= require foundation/foundation.interchange
+//= require foundation/foundation.offcanvas
+//= require foundation/foundation.reveal
+//= require foundation/foundation.tab
+//= require foundation/foundation.tooltip
+//= require foundation/foundation.topbar
+//= require foundation/foundation.equalizer
 //= require turbolinks
 //= require_tree .
 
