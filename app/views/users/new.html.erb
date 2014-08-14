@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="columns small-9 small-centered">
+    <%= form_for @user, html: {class: 'something'} do |f| %>
+
+      <div class="rows">
+        <div class="small-12 columns">
+          <%= f.label :name %>
+          <%= f.text_field :name %>  
+        </div>
+      </div>
+
+     <div class="rows">
+        <div class="small-12 columns">
+          <%= f.label :birthday_wish %>
+          <%= f.text_area :birthday_wish %>
+        </div>
+      </div>
+
+      <div class="rows">
+        <div class="small-4 columns small-centered">
+            <%= f.submit 'Submit', :class => 'button radius expand' %>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>
