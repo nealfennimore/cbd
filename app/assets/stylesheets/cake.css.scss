@@ -147,3 +147,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#898989', end
   -webkit-animation-name: pulse;
   animation-name: pulse;
 }
+
+.reveal-modal {
+  overflow-y: auto;
+}
