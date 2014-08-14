@@ -1,6 +1,17 @@
 // Place all the styles related to the Cake controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+font-face {
+  font-family: 'PermanentMarker';
+  src:url('PermanentMarker-webfont.eot');
+  src:url('PermanentMarker-webfont.eot?#iefix') format('embedded-opentype'),
+    url('PermanentMarker-webfont.svg#PermanentMarker-webfont') format('svg'),
+    url('PermanentMarker-webfont.woff') format('woff'),
+    url('PermanentMarker-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 body {
 background: rgb(137,137,137);
