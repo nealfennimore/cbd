@@ -1,9 +1,9 @@
+var age = parseInt(document.getElementById("cake-holder").getAttribute("data-age")); 
+
 var Candle = function(candle, el_index){
         this.candle_img = getRandomInt(0,candle);
         this.container_index = getRandomInt(1,el_index)
     }
-
-
 
 var Cake = {
 
@@ -123,12 +123,22 @@ function getRandomInt (min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-Cake.createCandles(27);
+Cake.createCandles(age);
 Cake.renderCandles();
 
+
 $(document).ready(function(){
-  $('div.flame').hover(function(){
+  $('div.flame').on('mouseenter', function(){
     $(this).fadeOut(150);
+    age--;
+    $(this).unbind('mouseenter');
+
+    setTimeout(function(){
+      if(age === 0){
+        alert("Happy Birthday!");
+      }
+    }, 160);
+
   })
 })
 
