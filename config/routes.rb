@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   root 'cake#index'
   get '/' => 'cake#index'
 
+  resources :users
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
