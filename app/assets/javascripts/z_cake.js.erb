@@ -1,4 +1,4 @@
-var age = parseInt(document.getElementById("cake-holder").getAttribute("data-age")); 
+var age = parseInt(document.getElementById("cake-holder").getAttribute("data-age")) || 0; 
 
 var Candle = function(candle, el_index){
         this.candle_img = getRandomInt(0,candle);
@@ -134,7 +134,7 @@ $(document).ready(function(){
       $(this).remove();
 
       $('#myModal').foundation('reveal', 'open', {
-        url: '/users',
+        url: '/users-ajax',
         success: function(data) {
             
         },
