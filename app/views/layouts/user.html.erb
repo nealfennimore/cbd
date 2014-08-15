@@ -22,13 +22,21 @@
       <section class="top-bar-section">
         <ul class="right">
           <li class="has-dropdown">
-              <div><% if current_user %>
-                Welcome <strong><%= current_user.name %></strong>!
-                <%= link_to "Sign out", signout_path, id: "sign_out" %>
+            <a href="#"><% if current_user %>
+                Welcome <strong><%= current_user.name %></strong>!</a>
+                <ul class="dropdown">
+                  <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+                  <li><%= link_to "Show", user_path(current_user.id) %></li>
+                  <li><%= link_to "Edit", edit_user_path(current_user.id) %></li>
+                  <li><%= link_to 'Destroy', user_path(current_user.id), method: :delete, data: { confirm: 'Are you sure you want to remove yourself?' }
+%></li>
+                </ul>   
               <% else %>
                 <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
               <% end %>
-            </div>
+
+
+              
           </li>
         </ul>
       </section>
