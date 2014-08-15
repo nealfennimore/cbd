@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   root 'cake#index'
   get '/' => 'cake#index'
 
-  resources :users
+  get '/users-ajax' => 'users#ajax'
+  resources :users, only: [:index, :show, :edit, :update, :destroy]
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
