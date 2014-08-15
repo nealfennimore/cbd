@@ -1,11 +1,13 @@
-<a class="close-reveal-modal">&#215;</a>
-<div class="modal-holder">
-<% if @users %>
-  <% @users.each do |user| %>
-    <dl>
-      <dt><%= user.name %></dt>
-      <dd><%= user.birthday_wish %></dd>
-    </dl>
-  <% end %>
-<% end %>
+<div class="row">
+  <div class="columns small-8 small-centered">
+    <% if @users %>
+      <% @users.each do |user| %>
+        <ul class="pricing-table">
+          <li class="title"><img src="<%= user.image %>"/>
+            <%= user.name %></li>
+          <li class="description"><%= user.birthday_wish %></li>
+        </ul>
+      <% end %>
+    <% end %>
+  </div>
 </div>
