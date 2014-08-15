@@ -25,5 +25,3 @@
 //= require foundation/foundation.equalizer
 //= require turbolinks
 //= require_tree .
-
-$(function(){ $(document).foundation(); });
