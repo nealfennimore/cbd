@@ -1,13 +1,13 @@
 <svg id="blue-candle" width="23" height="142">
     <defs>
-        <linearGradient id="gradient-bezier" x1="12" y1="139.25" x2="12" y2="17.31" gradientUnits="userSpaceOnUse" >
+        <linearGradient id="gradient-bezier-4" x1="12" y1="139.25" x2="12" y2="17.31" gradientUnits="userSpaceOnUse" >
             <stop offset="0" stop-color="rgb(0, 151, 226)" stop-opacity="1" />
             <stop offset="0.43" stop-color="rgb(102, 203, 240)" stop-opacity="1" />
             <stop offset="1" stop-color="rgb(204, 255, 255)" stop-opacity="1" />
         </linearGradient>
     </defs>
     <g id="group">
-        <path id="bezier" stroke="none" fill="url(#gradient-bezier)" d="M 23.25,134.73 C 23.25,135.89 22.15,137.04 19.95,137.92 15.56,139.69 8.44,139.69 4.05,137.92 1.85,137.04 0.75,135.89 0.75,134.73 L 0.75,17.31 23.25,17.31 23.25,134.73 Z M 23.25,134.73" />
+        <path id="bezier" stroke="none" fill="url(#gradient-bezier-4)" d="M 23.25,134.73 C 23.25,135.89 22.15,137.04 19.95,137.92 15.56,139.69 8.44,139.69 4.05,137.92 1.85,137.04 0.75,135.89 0.75,134.73 L 0.75,17.31 23.25,17.31 23.25,134.73 Z M 23.25,134.73" />
         <path id="bezier3" stroke="rgb(204, 255, 255)" stroke-width="0.2" stroke-miterlimit="10" fill="rgb(204, 255, 255)" d="M 19.1,13.81 C 19.39,13.9 19.68,14.01 19.95,14.12 24.35,15.88 24.35,18.74 19.95,20.51 15.56,22.27 8.44,22.27 4.05,20.51 -0.35,18.74 -0.35,15.88 4.05,14.12 4.32,14.01 4.61,13.9 4.9,13.81 L 12,0 19.1,13.81 Z M 19.1,13.81" />
     </g>
 </svg>
