@@ -42,27 +42,27 @@ body {
   height: 142px;
 }
 
-.candle-holder-1, .candle-holder-2, .candle-holder-3, .candle-holder-4, .candle-holder-5 {
+.candle-holder-0, .candle-holder-1, .candle-holder-2, .candle-holder-3, .candle-holder-4 {
   position: absolute;
 }
 
-.candle-holder-1, .candle-holder-2 {
+.candle-holder-0, .candle-holder-1 {
   width: 100px;
   height: 100px;
   top: 140px;
 }
 
-.candle-holder-1 {
+.candle-holder-0 {
   left: 72px;
   z-index: 5;
 }
 
-.candle-holder-2 {
+.candle-holder-1 {
   right: 88px;
   z-index: 4;
 }
 
-.candle-holder-3 {
+.candle-holder-2 {
   height: 41px;
   width: 500px;
   top: 95px;
@@ -70,7 +70,7 @@ body {
   z-index: 3;
 }
 
-.candle-holder-4 {
+.candle-holder-3 {
   width: 371px;
   height: 30px;
   top: 65px;
@@ -78,7 +78,7 @@ body {
   z-index: 2;
 }
 
-.candle-holder-5 {
+.candle-holder-4 {
   width: 208px;
   height: 22px;
   top: 43px;

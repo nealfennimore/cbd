@@ -2,117 +2,108 @@ var age = parseInt(document.getElementById("cake-holder").getAttribute("data-age
 
 var Candle = function(candle, el_index){
         this.candle_img = getRandomInt(0,candle);
-        this.container_index = getRandomInt(1,el_index)
+        this.container_index = getRandomInt(0,el_index)
     }
+
+Candle.prototype.top_pos = null;
+Candle.prototype.left_pos = null;
 
 var Cake = {
 
-  candles: [],
+  init: function(){
+    this.createCandles(age);
+    this.sortCandlesByTopPos();
+    this.createCandleHolders();
+  },
+
+  candles: [[],[],[],[]],
 
   createCandles: function(age){
     for (var i = 0; i < age; i++) {
-      var candle = new Candle(5,5);
-      this.candles.push(candle);
+      var candle = new Candle(5,4);
+      candle = this.setCandleHolderOffsetFromParent(candle);
+      this.candles[candle.container_index].push(candle);
     }
   },
 
-  createCandleHolder: function(candle_index){
-    var holder = document.createElement("div");
-    holder.setAttribute('id', 'candle-' + candle_index )
+  sortCandlesByTopPos: function(){
+    for (var i = 0; i < this.candles.length; i++) {
+      this.candles[i].sort(function(a, b) {
+        var x = a.top_pos;
+        var y = b.top_pos;
 
-    var candle_container_index = Cake.candles[candle_index].container_index,
-        candle_parent = document.getElementsByClassName("candle-holder-" + candle_container_index)[0],
-        candle_parent_child_holder = candle_parent.children[0];
-
-    if (candle_parent_child_holder.children.length === 0) {
-      holder.style.zIndex = 0;
+        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+      });
     };
-
-    holder = this.setCandleHolderOffsetFromParent(holder, candle_container_index, candle_parent);
-    this.setCandleHolderZindex(holder, candle_parent_child_holder);
-
-    return holder;
   },
 
-  setCandleHolderOffsetFromParent: function(holder, candle_container_index, candle_parent){
-    var random_offset = getRandomInt(0, candle_parent.offsetHeight);
+  createCandleHolders: function(){
+    var el_index = 0;
+    for (var i = 0; i < Cake.candles.length; i++) {
+      for (var ci = 0; ci < Cake.candles[i].length; ci++) {
 
-    if (candle_container_index === 3 || candle_container_index === 4) {
+        var candle_obj = Cake.candles[i][ci];
+        var holder = document.createElement("div");
+        holder.setAttribute('id', 'candle-' + el_index);
+
+        var candle_parent = document.getElementsByClassName("candle-holder-" + candle_obj.container_index)[0],
+            candle_parent_child_holder = candle_parent.firstElementChild;
+
+        holder.style.top = "-" + candle_obj.top_pos + "px";
+        holder.style.left = candle_obj.left_pos + "px";
+        holder.style.zIndex = "-" + (ci + 1);
+
+        candle_parent_child_holder.appendChild(holder);
+        this.renderSVG("candle", el_index, candle_obj.candle_img);
+
+        holder.appendChild(this.createCandleFlameHolder(el_index));
+        this.renderSVG("flame", el_index, 5);
+
+        el_index++
+      };
+    };
+  },
+
+  setCandleHolderOffsetFromParent: function(candle_obj){
+    var candle_container_index = candle_obj.container_index;
+    var candle_holder = document.getElementsByClassName("candle-holder-" + candle_container_index)[0]
+    var random_offset = getRandomInt(0, candle_holder.offsetHeight);
+
+    if (candle_container_index === 2 || candle_container_index === 3) {
       var top = 95;
     } else {
       var top = 39;
     }
-    var left = getRandomInt(0, candle_parent.offsetWidth) - 23;
+    var left = getRandomInt(0, candle_holder.offsetWidth) - 23;
 
-    holder.style.top = "-" + (random_offset + top) + 'px';
-    holder.style.left = left + 'px';
-    return holder;
+    candle_obj.top_pos = random_offset + top;
+    candle_obj.left_pos = left;
+    return candle_obj;
   },
 
-  setCandleHolderZindex: function(holder, parent_el){
-
-    var zindex = holder.style.zIndex;
-    parent_el.appendChild(holder);
-
-    var current_top = parseInt(holder.style.top.slice(0,-2));
-    var siblings = parent_el.childNodes;
-
-    for(var i = 0; i < siblings.length; i++) {
-      var current_sibling_top = parseInt(siblings[i].style.top.slice(0,-2));
-      var current_sibling_zindex = parseInt(siblings[i].style.zIndex) || 0;
-
-
-
-      if(current_sibling_top >= current_top && current_sibling_zindex <= zindex){
-          holder.style.zIndex = current_sibling_zindex - 1;
-      } 
-    };
-
-  },
-
-  createCandleFlameHolder: function(i){
+  createCandleFlameHolder: function(el_index){
       var flame = document.createElement("div");
-      flame.setAttribute('id', 'flame-' + i)
-      flame.setAttribute('class', 'flame animated infinite pulse');    
+      flame.setAttribute('id', 'flame-' + el_index)
+      flame.setAttribute('class', 'flame animated infinite pulse');  
       return flame;
   },
 
-  renderCandleFlame: function(flame_holder_index){
-      var flame_svg = "<%= asset_path('cake-candle.svg') %>"
-      var s = Snap("#flame-" + flame_holder_index);
-      Snap.load(flame_svg, function(data){
+  renderSVG: function(id_name, el_index, svg_img_index){
+      var svg_index = svg_img_index;
+      var svg = this.grabSVGImage[svg_index];
+      var s = Snap("#" + id_name + "-" + el_index);
+      Snap.load(svg, function(data){
         s.append( data );
       });
   },
 
-  renderCandles: function(){
-    for (var i = 0; i < this.candles.length; i++) {
-
-      (function() {
-
-      var candle_holder = Cake.createCandleHolder(i);
-      var flame_holder = Cake.createCandleFlameHolder(i);
-      candle_holder.appendChild(flame_holder);
-
-      var s = Snap("#candle-" + i);
-      var candle_svg = Cake.grabCandleSVGImg[Cake.candles[i].candle_img];
-    
-      Snap.load(candle_svg, function(data){
-        s.append( data );
-      });
-
-      Cake.renderCandleFlame(i);
-
-      })(i);
-    }
-  },
-
-  grabCandleSVGImg: [
+  grabSVGImage: [
   "<%= asset_path('candle-0.svg') %>",
   "<%= asset_path('candle-1.svg') %>",
   "<%= asset_path('candle-2.svg') %>",
   "<%= asset_path('candle-3.svg') %>",
-  "<%= asset_path('candle-4.svg') %>"
+  "<%= asset_path('candle-4.svg') %>",
+  "<%= asset_path('cake-candle.svg') %>"
   ],
 
 };
@@ -123,9 +114,7 @@ function getRandomInt (min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-Cake.createCandles(age);
-Cake.renderCandles();
-
+Cake.init();
 
 $(document).ready(function(){
   $('div.flame').on('mouseenter', function(){
