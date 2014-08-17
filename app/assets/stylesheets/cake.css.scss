@@ -41,21 +41,20 @@ body {
   bottom: 0;
   width: 100%;
   height: 50%;
-  z-index: -1;background: -moz-radial-gradient(center, ellipse cover,  rgba(69,72,77,0.8) 0%, rgba(60,63,67,0.8) 13%, rgba(48,51,54,0.6) 30%, rgba(32,34,36,0.4) 53%, rgba(3,3,3,0) 96%, rgba(0,0,0,0) 100%);
-background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(69,72,77,0.8)), color-stop(13%,rgba(60,63,67,0.8)), color-stop(30%,rgba(48,51,54,0.6)), color-stop(53%,rgba(32,34,36,0.4)), color-stop(96%,rgba(3,3,3,0)), color-stop(100%,rgba(0,0,0,0)));
-background: -webkit-radial-gradient(center, ellipse cover,  rgba(69,72,77,0.8) 0%,rgba(60,63,67,0.8) 13%,rgba(48,51,54,0.6) 30%,rgba(32,34,36,0.4) 53%,rgba(3,3,3,0) 96%,rgba(0,0,0,0) 100%);
-background: -o-radial-gradient(center, ellipse cover,  rgba(69,72,77,0.8) 0%,rgba(60,63,67,0.8) 13%,rgba(48,51,54,0.6) 30%,rgba(32,34,36,0.4) 53%,rgba(3,3,3,0) 96%,rgba(0,0,0,0) 100%);
-background: -ms-radial-gradient(center, ellipse cover,  rgba(69,72,77,0.8) 0%,rgba(60,63,67,0.8) 13%,rgba(48,51,54,0.6) 30%,rgba(32,34,36,0.4) 53%,rgba(3,3,3,0) 96%,rgba(0,0,0,0) 100%);
-background: radial-gradient(ellipse at center,  rgba(69,72,77,0.8) 0%,rgba(60,63,67,0.8) 13%,rgba(48,51,54,0.6) 30%,rgba(32,34,36,0.4) 53%,rgba(3,3,3,0) 96%,rgba(0,0,0,0) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc45484d', endColorstr='#00000000',GradientType=1 );
-
+  z-index: -1;
+  background: -moz-radial-gradient(center, ellipse cover,  rgba(69,72,77,0.8) 0%, rgba(60,63,67,0.8) 13%, rgba(48,51,54,0.6) 30%, rgba(32,34,36,0.4) 53%, rgba(3,3,3,0) 96%, rgba(0,0,0,0) 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(69,72,77,0.8)), color-stop(13%,rgba(60,63,67,0.8)), color-stop(30%,rgba(48,51,54,0.6)), color-stop(53%,rgba(32,34,36,0.4)), color-stop(96%,rgba(3,3,3,0)), color-stop(100%,rgba(0,0,0,0)));
+  background: -webkit-radial-gradient(center, ellipse cover,  rgba(69,72,77,0.8) 0%,rgba(60,63,67,0.8) 13%,rgba(48,51,54,0.6) 30%,rgba(32,34,36,0.4) 53%,rgba(3,3,3,0) 96%,rgba(0,0,0,0) 100%);
+  background: -o-radial-gradient(center, ellipse cover,  rgba(69,72,77,0.8) 0%,rgba(60,63,67,0.8) 13%,rgba(48,51,54,0.6) 30%,rgba(32,34,36,0.4) 53%,rgba(3,3,3,0) 96%,rgba(0,0,0,0) 100%);
+  background: -ms-radial-gradient(center, ellipse cover,  rgba(69,72,77,0.8) 0%,rgba(60,63,67,0.8) 13%,rgba(48,51,54,0.6) 30%,rgba(32,34,36,0.4) 53%,rgba(3,3,3,0) 96%,rgba(0,0,0,0) 100%);
+  background: radial-gradient(ellipse at center,  rgba(69,72,77,0.8) 0%,rgba(60,63,67,0.8) 13%,rgba(48,51,54,0.6) 30%,rgba(32,34,36,0.4) 53%,rgba(3,3,3,0) 96%,rgba(0,0,0,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc45484d', endColorstr='#00000000',GradientType=1 );
 }
 
 .cake-holder {
-  position: relative;
-  top: 100px;
+  position: absolute;
+  top: 17%;
   width: 100%;
-  position: relative;
 }
 
 .svg-container {
@@ -83,11 +82,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc45484d', e
 
 .candle-holder div {
   position: absolute;
-  width: 23px;
-  height: 142px;
+  min-width: 1.45em;
+  height: 8.9em;
 }
 
-.candle-holder-0, .candle-holder-1, .candle-holder-2, .candle-holder-3, .candle-holder-4 {
+.candle-holder-0, .candle-holder-1, .candle-holder-2, .candle-holder-3{
   position: absolute;
 }
 
@@ -123,19 +122,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc45484d', e
   z-index: 2;
 }
 
-.candle-holder-4 {
-  width: 208px;
-  height: 22px;
-  top: 43px;
-  left: 260px;
-  z-index: 1;
-}
-
 .candle-holder div.flame {
-  width: 23px;
-  height: 35px;
-  display: block;
-  top: -24px;
+  height: 2.82em;
+  top: -1.5em;
+  z-index: 999;
 }
 
 .animated {
@@ -195,8 +185,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc45484d', e
 .reveal-modal {
   overflow-y: auto;
   background: #FFFFF2;
-  border: 2em solid rgba(255,255,0,0.3);
-  border-radius: 20px;
+  border-style: solid;
+  border-width: 15px;
+  -moz-border-image: url(border.png) 25 round;
+  -webkit-border-image: url(border.png) 25 round;
+  -o-border-image: url(border.png) 25 round;
+  border-image: url(border.png) 25 round;
 }
 .close-reveal-modal {
   color: orange !important;
