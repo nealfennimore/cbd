@@ -8,6 +8,10 @@ var Candle = function(candle, el_index){
 Candle.prototype.top_pos = null;
 Candle.prototype.left_pos = null;
 
+function getRandomInt (min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
 var Cake = {
 
   init: function(){
@@ -74,7 +78,7 @@ var Cake = {
     } else {
       var top = 39;
     }
-    var left = getRandomInt(0, candle_holder.offsetWidth) - 23;
+    var left = getRandomInt(0, candle_holder.offsetWidth) - 20;
 
     candle_obj.top_pos = random_offset + top;
     candle_obj.left_pos = left;
@@ -82,37 +86,31 @@ var Cake = {
   },
 
   createCandleFlameHolder: function(el_index){
-      var flame = document.createElement("div");
-      flame.setAttribute('id', 'flame-' + el_index)
-      flame.setAttribute('class', 'flame animated infinite pulse');  
-      return flame;
+    var flame = document.createElement("div");
+    flame.setAttribute('id', 'flame-' + el_index)
+    flame.setAttribute('class', 'flame animated infinite pulse');  
+    return flame;
   },
 
   renderSVG: function(id_name, el_index, svg_img_index){
-      var svg_index = svg_img_index;
-      var svg = this.grabSVGImage[svg_index];
-      var s = Snap("#" + id_name + "-" + el_index);
-      Snap.load(svg, function(data){
-        s.append( data );
-      });
+    var svg_index = svg_img_index;
+    var svg = this.grabSVGImage[svg_index];
+    var s = Snap("#" + id_name + "-" + el_index);
+    Snap.load(svg, function(data){
+      s.append( data );
+    });
   },
 
   grabSVGImage: [
-  "<%= asset_path('candle-0.svg') %>",
-  "<%= asset_path('candle-1.svg') %>",
-  "<%= asset_path('candle-2.svg') %>",
-  "<%= asset_path('candle-3.svg') %>",
-  "<%= asset_path('candle-4.svg') %>",
-  "<%= asset_path('cake-candle.svg') %>"
+    "<%= asset_path('candle-0.svg') %>",
+    "<%= asset_path('candle-1.svg') %>",
+    "<%= asset_path('candle-2.svg') %>",
+    "<%= asset_path('candle-3.svg') %>",
+    "<%= asset_path('candle-4.svg') %>",
+    "<%= asset_path('cake-candle.svg') %>"
   ],
 
 };
-
-
-
-function getRandomInt (min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
 
 Cake.init();
 
@@ -121,27 +119,22 @@ $(document).ready(function(){
     $(this).unbind('mouseenter');
     if(age === 1){
       $(this).remove();
-
-      $('#myModal').foundation('reveal', 'open', {
+      $('#Modal').foundation('reveal', 'open', {
         url: '/users-ajax',
-        success: function(data) {
-            
+        success: function(data) {          
         },
         error: function() {
-            alert('failed loading modal');
+          alert('failed loading modal');
         }
       });
-
     } else {
       $(this).fadeOut(150);
     }
     age--;
   })
-  $('.reveal-modal').css('max-height', $('html').height() - 110 + 'px'); // 100 +10px to keep modal effect visible
+  $('.reveal-modal').css('max-height', $('html').height() - 110 + 'px');
 })
 
-
-// Reset max-height after window resize
 $(window).resize(function() {
     $('.reveal-modal').css('max-height', $('html').height() - 110 + 'px');
 })

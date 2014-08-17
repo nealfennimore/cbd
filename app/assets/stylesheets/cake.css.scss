@@ -12,6 +12,14 @@
   font-style: normal;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  }
+
 body {
   background: rgb(137,137,137);
   background: -moz-radial-gradient(center, ellipse cover,  rgba(137,137,137,1) 0%, rgba(0,0,0,1) 100%);
@@ -23,13 +31,48 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#898989', endColorstr='#000000',GradientType=1 );
 }
 
+#confetti {
+  position: absolute;
+  z-index: -2;
+}
+
+#table {
+  position: absolute; 
+  bottom: 0;
+  width: 100%;
+  height: 373px;
+  z-index: -1;
+  background: image-url('table2.jpg') repeat-x bottom !important;
+  background-size: cover;
+  box-shadow: inset 0 49px 50px -22px rgba(5, 5, 5, 0.3);
+  -moz-box-shadow: inset 0 49px 50px -22px rgba(5, 5, 5, 0.3);
+  -webkit-box-shadow: inset 0 49px 50px -22px rgba(5, 5, 5, 0.3);
+}
+
 .cake-holder {
   position: relative;
   top: 100px;
-  background: image-url('table2.jpg') repeat-x bottom !important;
-  background-size: cover;
   width: 100%;
   position: relative;
+}
+
+.svg-container {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  padding-bottom: 100%;
+  vertical-align: middle;
+  top: 0;
+  left: 0;
+}
+
+.svg-content {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .candle-holder {
@@ -47,34 +90,34 @@ body {
 }
 
 .candle-holder-0, .candle-holder-1 {
-  width: 100px;
-  height: 100px;
-  top: 140px;
+  width: 14%;
+  height: 14%;
+  top: 19%;
 }
 
 .candle-holder-0 {
-  left: 72px;
+  left: 7%;
   z-index: 5;
 }
 
 .candle-holder-1 {
-  right: 88px;
+  right: 14%;
   z-index: 4;
 }
 
 .candle-holder-2 {
-  height: 41px;
-  width: 500px;
-  top: 95px;
-  left: 115px;
+  height: 5%;
+  width: 63%;
+  top: 13%;
+  left: 14%;
   z-index: 3;
 }
 
 .candle-holder-3 {
-  width: 371px;
-  height: 30px;
-  top: 65px;
-  left: 178px;
+  width: 49%;
+  height: 4%;
+  top: 9%;
+  left: 22%;
   z-index: 2;
 }
 

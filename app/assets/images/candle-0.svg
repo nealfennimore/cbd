@@ -1,4 +1,4 @@
-<svg id="yellow-candle" width="23" height="142" >
+<svg class="yellow-candle" preserveAspectRatio="xMinYMin meet" >
     <defs>
         <linearGradient id="gradient-bezier-0" x1="12" y1="139.25" x2="12" y2="17.31" gradientUnits="userSpaceOnUse" >
             <stop offset="0" stop-color="rgb(255, 255, 19)" stop-opacity="1" />
