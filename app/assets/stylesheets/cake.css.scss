@@ -187,10 +187,10 @@ body {
   background: #FFFFF2;
   border-style: solid;
   border-width: 15px;
-  -moz-border-image: url(border.png) 25 round;
-  -webkit-border-image: url(border.png) 25 round;
-  -o-border-image: url(border.png) 25 round;
-  border-image: url(border.png) 25 round;
+  -moz-border-image: image-url('border.png') 25 round;
+  -webkit-border-image: image-url('border.png') 25 round;
+  -o-border-image: image-url('border.png') 25 round;
+  border-image: image-url('border.png') 25 round;
 }
 .close-reveal-modal {
   color: orange !important;
