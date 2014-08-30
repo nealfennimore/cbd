@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :edit, :update, :destroy]
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
-  match 'auth/failure', to: redirect('/users'), via: [:get, :post]
+  match 'auth/failure', to: redirect('/'), via: [:get, :post]
   match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 
   # Example of regular route:
