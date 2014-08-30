@@ -1,6 +1,6 @@
 <a class="close-reveal-modal">&#215;</a>
 <div class="modal-holder">
-  <h1 id="happy-birthday-h1" class="center">Happy Birthday! You're now <%= @age %>!</h1>
+  <h1 id="happy-birthday-h1" class="center"><%= @age %> years old! Happy Birthday!</h1>
   <% if @users %>
     <% @users.each do |user| %>
       <div class="row">
