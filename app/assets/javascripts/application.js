@@ -24,4 +24,3 @@
 //= require foundation/foundation.topbar
 //= require foundation/foundation.equalizer
 //= require turbolinks
-//= require_tree .
