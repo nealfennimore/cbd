@@ -28,7 +28,7 @@ gem 'spring',        group: :development
 
 gem 'foundation-rails'
 gem 'rails_12factor', group: :production
-gem 'omniauth'
+
 gem 'omniauth-facebook'
 
 # Use ActiveModel has_secure_password

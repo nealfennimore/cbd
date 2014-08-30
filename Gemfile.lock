@@ -146,7 +146,6 @@ DEPENDENCIES
   foundation-rails
   jbuilder (~> 2.0)
   jquery-rails
-  omniauth
   omniauth-facebook
   pg
   rails (= 4.1.1)
